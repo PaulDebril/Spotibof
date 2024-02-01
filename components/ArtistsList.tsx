@@ -1,5 +1,6 @@
 import {getTopArtists} from "@/lib/services";
 import {artist} from "@/types";
+import Link from "next/link";
 
 export default async function ArtistsList() {
     const data = await getTopArtists()
@@ -22,7 +23,7 @@ export default async function ArtistsList() {
         <ul>
             {data.map((artist: artist) => (
                 <li key={artist.mbid}>
-                    <a href={artist.mbid}>{artist.name}</a>
+                    <Link href={artist.mbid}>{artist.name}</Link>
                 </li>
             ))}
         </ul>
