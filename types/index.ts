@@ -12,3 +12,12 @@ export type image = {
     '#text': string;
     size: string;
 }
+
+export type album = {
+    name: string;
+    playcount: string;
+    mbid: string;
+    url: string;
+    artist: artist;
+    image: image[];
+}
