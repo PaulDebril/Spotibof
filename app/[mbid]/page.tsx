@@ -1,4 +1,4 @@
-import AlbumsFromArtistList from "@/components/AlbumsFromArtistList";
+import AlbumsFromArtistList from '@/components/AlbumsFromArtistList';
 
 export default function ArtistPage({ params }: { params: { mbid: string } }) {
     return (
