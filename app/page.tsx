@@ -1,6 +1,4 @@
-import ArtistsList from "../components/artists/artists-list";
-import { ScrollArea } from "../components/ui/scroll-area";
-import { madeForYouAlbums } from "./data/albums";
+import ArtistsList from "../components/ArtistsList";
 
 export default function Home() {
   return (

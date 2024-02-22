@@ -1,6 +1,9 @@
 import {getTopArtists} from "@/lib/services";
 import {artist} from "@/types";
 import Link from "next/link";
+import {ScrollArea} from "@/components/ui/scroll-area";
+import {madeForYouAlbums} from "@/app/data/albums";
+import {ArtistsCards} from "@/components/artists/artists-cards";
 
 export default async function ArtistsList() {
     const data = await getTopArtists()
@@ -19,12 +22,20 @@ export default async function ArtistsList() {
         </main>
     }
 
-    return <main>
-        <ul>
+    return <main className={''}>
+        <ul className={"flex flex-wrap gap-2"}>
             {data.map((artist: artist) => (
-                <li key={artist.mbid}>
-                    <Link href={artist.mbid}>{artist.name}</Link>
-                </li>
+              <li key={artist.mbid}>
+                  <Link href={artist.mbid}>
+					<ArtistsCards
+					  artist={artist}
+					  className="w-[150px]"
+					  aspectRatio="square"
+					  width={150}
+					  height={150}
+					/>
+				  </Link>
+              </li>
             ))}
         </ul>
     </main>
