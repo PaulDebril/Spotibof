@@ -6,6 +6,7 @@ export type artist = {
     url: string;
     streamable: string;
     image: image[];
+    tags: tag[];
 }
 
 export type image = {
@@ -20,4 +21,15 @@ export type album = {
     url: string;
     artist: artist;
     image: image[];
+}
+
+export type tag = {
+    count: number;
+    name: string;
+    url: string;
+}
+
+export type error = {
+    message: string;
+    status: string;
 }
