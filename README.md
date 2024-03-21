@@ -1,36 +1,35 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Spotibof
 
-## Getting Started
+Spotibof est une application affichant les artistes célèbres ainsi que leurs titres.
 
-First, run the development server:
+Membres de l'équipe :
+_BACQUET Antoine, BERDIN Clément, LANGREZ Marine_
+
+## Lancer le projet
+
+Rajoutez un fichier '.env.local' qui contient :
+
+```bash
+NEXT_PUBLIC_API_KEY=370ba6300abb539fa57efe766a2fba94
+```
+
+Pour installer le projet :
+
+```bash
+npm i
+```
+
+Pour lancer le projet :
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Ouvrez [http://localhost:3000](http://localhost:3000) dans votre navigateur pour voir le résultat.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Ce que vous devez faire
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- Faire en sorte d'afficher une image pour les artistes où l'image n'apparaît pas
+- Faire en sorte pour chaque artiste, d'afficher les covers de leurs albums
+- Faire en sorte d'afficher les informations de l'artiste lorsque l'on clique sur sa card
+- Faire la barre de recherche

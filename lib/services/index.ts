@@ -21,9 +21,6 @@ export async function getTopArtists(page: number = 1) {
     };
   }
 
-  // console.log("tset");
-  // console.log(res.artists.artist[0]);
-
   res.artists.artist.map(async (artist: artist) => {
     artist.tags = await getArtistTags(artist.name);
   });
@@ -75,13 +72,11 @@ export async function getImg(mbid: string, page: number = 1) {
     };
   }
   const imageUrl = res.topalbums.album[0].image[2]["#text"];
-  // console.log("---");
-  // console.log(imageUrl);
+
   return imageUrl;
 }
 
 export async function getArtistTags(artist: string) {
-  // console.log(encodeURI(artist));
 
   const res = await fetch(
     `http://ws.audioscrobbler.com/2.0/?format=json&method=artist.getTopTags&artist=${encodeURI(
