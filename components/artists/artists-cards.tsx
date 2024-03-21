@@ -14,12 +14,13 @@ import {
   ContextMenuSubTrigger,
   ContextMenuTrigger,
 } from "../ui/context-menu";
-import {artist} from "@/types";
+import { artist } from "@/types";
 
 interface ArtistProps extends React.HTMLAttributes<HTMLDivElement> {
   aspectRatio?: "portrait" | "square";
   width?: number;
   height?: number;
+  img?: any;
   artist: artist;
 }
 export function ArtistsCards({
@@ -28,6 +29,7 @@ export function ArtistsCards({
   width,
   height,
   className,
+  img,
   ...props
 }: ArtistProps) {
   return (
@@ -35,7 +37,7 @@ export function ArtistsCards({
       <div className={cn("space-y-3", className)} {...props}>
         <div className="overflow-hidden rounded-md">
           <Image
-            src={"https://picsum.photos/536/354"}
+            src={img}
             alt={"album.name"}
             width={width}
             height={height}
