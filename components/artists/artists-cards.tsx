@@ -1,3 +1,4 @@
+
 import Image from "next/image";
 import { PlusCircledIcon } from "@radix-ui/react-icons";
 import { Album } from "../../app/data/albums";
@@ -15,6 +16,8 @@ import {
   ContextMenuTrigger,
 } from "../ui/context-menu";
 import { artist } from "@/types";
+
+const rdmimage = "https://fakeimg.pl/500x500/?text=X";
 
 interface ArtistProps extends React.HTMLAttributes<HTMLDivElement> {
   aspectRatio?: "portrait" | "square";
@@ -37,7 +40,7 @@ export function ArtistsCards({
       <div className={cn("space-y-3", className)} {...props}>
         <div className="overflow-hidden rounded-md">
           <Image
-            src={img}
+            src={img.message ? rdmimage : img}
             alt={"album.name"}
             width={width}
             height={height}
