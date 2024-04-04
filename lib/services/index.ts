@@ -76,6 +76,30 @@ export async function getImg(mbid: string, page: number = 1) {
   return imageUrl;
 }
 
+export async function getArtistInfo(artistName: string) {
+  const res = await fetch(
+    `http://ws.audioscrobbler.com/2.0/?format=json&method=artist.getinfo&mbid=${encodeURI(artistName)}&api_key=${process.env.NEXT_PUBLIC_API_KEY}`,
+    {
+      method: "GET",
+      redirect: "follow",
+    }
+  )
+  .then(response => response.json())
+  .catch(error => console.log("error", error));
+
+  if (res.error) {
+    return {
+      message: res.message,
+      status: "error",
+    };
+  }
+
+  // Ajouter l'appel pour récupérer les tags spécifiques à l'artiste
+  res.artist.tags = await getArtistTags(artistName);
+
+  return res.artist;
+}
+
 export async function getArtistTags(artist: string) {
 
   const res = await fetch(
