@@ -128,3 +128,28 @@ export async function getArtistTags(artist: string) {
 
   return res.toptags.tag.filter((tag: any) => tag.count == 100);
 }
+
+export async function getArtistSearch(artist: string) {
+
+  const res = await fetch(
+    `https://ws.audioscrobbler.com/2.0/?method=artist.search&artist=${artist}&api_key=37ea2fcfc673e0a9b73b12051e668177&format=json`,
+    {
+      method: "GET",
+      redirect: "follow",
+      next: {
+        revalidate: 60,
+      },
+    }
+  )
+    .then((response) => response.json())
+    .catch((error) => console.log("error", error));
+
+  if (res.error) {
+    return {
+      message: res.message,
+      status: "error",
+    };
+  }
+
+  return res.results.artistmatches.artist;
+}

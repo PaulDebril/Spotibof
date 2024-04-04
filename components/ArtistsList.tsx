@@ -1,12 +1,13 @@
-import { getImg, getTopAlbums, getTopArtists } from "@/lib/services";
+import { getImg, getTopAlbums, getTopArtists ,getArtistSearch} from "@/lib/services";
 import { artist } from "@/types";
 import Link from "next/link";
 import { ScrollArea } from "@/components/ui/scroll-area";
 import { madeForYouAlbums } from "@/app/data/albums";
 import { ArtistsCards } from "@/components/artists/artists-cards";
 
-export default async function ArtistsList() {
-  const data = await getTopArtists();
+export default async function ArtistsList(name: artist) {
+  // La barre de recherche fonctionne il manquait juste a lié le texte de la barre de recherche avec le parametres en dessous.
+  const data = await getArtistSearch("Drake");
 
   if (!data) {
     return (
@@ -37,6 +38,7 @@ export default async function ArtistsList() {
           paddingTop: "50px",
         }}
       >
+        
         {data.map(async (artist: artist) => {
           const albums = await getImg(artist.mbid);
           return (
@@ -58,3 +60,4 @@ export default async function ArtistsList() {
     </main>
   );
 }
+

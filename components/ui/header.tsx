@@ -1,4 +1,6 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
+import ArtistsList from '../ArtistsList';
 
 const Header: React.FC = () => {
     return (
@@ -18,7 +20,7 @@ const Header: React.FC = () => {
                   <input type="text" className="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0"
                          placeholder="" id=""/>
                   <input type="button" value="Search"
-                         className="bg-green-500 p-2 rounded-tr-lg rounded-br-lg text-black font-semibold hover:bg-green-400 hover:cursor-pointer transition-colors"/>
+                         className="bg-green-500 p-2 rounded-tr-lg rounded-br-lg text-black font-semibold hover:bg-green-400 hover:cursor-pointer transition-colors" />
                 </div>
               </div>
             </div>
