@@ -42,7 +42,7 @@ export default async function AlbumsFromArtistList({
             <ul style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '10px', justifyContent: 'center' }}>
                 {data.map((album: any) => (
                     <li key={album.mbid} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                        <img alt="" src={album.image} style={{ width: '150px', height: '150px' }} />
+                        <img alt="" src={album.image[2]['#text']} style={{ width: '150px', height: '150px' }} />
                         <p style={{ textAlign: 'center' }}>{album.name} </p>
                     </li>
                 ))}
