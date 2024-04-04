@@ -34,7 +34,6 @@ export default async function AlbumsFromArtistList({
             <p style={{ margin: '10px 0', color: '#000', fontSize: '24px', fontWeight: 'bold' }}>{ArtistInfo.name}</p>
             <p style={{ margin: '10px 0', fontSize: '18px', color: '#007BFF' }}>Streamable: {ArtistInfo.streamable}</p>
             <p style={{ margin: '10px 0', fontSize: '16px', color: '#555' }}>Auditeurs: {ArtistInfo.stats.listeners}</p>
-            <p style={{ margin: '10px 0', fontSize: '16px', color: '#555' }}>Lectures: {ArtistInfo.stats.plays}</p>
             <p style={{ margin: '10px 0', fontSize: '14px', color: '#666', textAlign: 'justify' }}>Biographie: {ArtistInfo.bio.summary}</p>
         </div>
 
