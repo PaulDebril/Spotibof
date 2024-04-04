@@ -66,12 +66,14 @@ export async function getImg(mbid: string, page: number = 1) {
     .catch((error) => console.log("error", error));
 
   if (res.error) {
+    
     return {
       message: res.message,
       status: "error",
     };
   }
   const imageUrl = res.topalbums.album[0].image[2]["#text"];
+
 
   return imageUrl;
 }
